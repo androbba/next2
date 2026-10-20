@@ -370,7 +370,27 @@ function show(t){
   void msg.offsetWidth;
   msg.classList.add('show');
 }
-  document.getElementById('no').addEventListener('click',function(){show('ამ დროისთვის ეს ღილაკი უფუნქციოა 🙂');});
+  document.getElementById('no').addEventListener('click',function(){
+   show(`
+  <div style="text-align:center; line-height:1.7;">
+
+    <h2 style="margin-bottom:20px;">
+      🎬 გადაღებები გადაიდო
+    </h2>
+
+    <p>
+      სცენარისტი გადაწყვეტილებას პატივს სცემს.
+    </p>
+
+    <p style="margin-top:18px;">
+      არაფრის მოწერა არ არის საჭირო.
+      მადლობა, რომ ბოლომდე უყურე
+      ამ უცნაურ ისტორიას. ❤️
+    </p>
+
+  </div>
+`);
+  });
 document.getElementById('yes').addEventListener('click',function(){
 show(`
   <div style="text-align:center; line-height:1.7;">
@@ -379,15 +399,9 @@ show(`
       🎬 გაგრძელება დამტკიცებულია!
     </h2>
 
-    <p>
-      სცენარისტმა სიხარულისგან
-      პროდიუსერიც გააღვიძა. 😂
-    </p>
-
     <p style="margin-top:18px;">
       ერთი ტექნიკური პრობლემა დარჩა:
-      ამ საიტის ავტორმა ლენდინგის აწყობა ისწავლა,
-      მაგრამ პასუხების მიღების სისტემა — ჯერ ვერა. 🤦‍♂️
+      საიტის აწყობა ვისწავლე, მაგრამ რომელ ღილაკს დააჭირე ეგ როგორ ვნახო არ ვიცი  🤦‍♂️
     </p>
 
     <p style="margin-top:18px;">
