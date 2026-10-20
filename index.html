@@ -387,7 +387,7 @@ document.addEventListener('click',function(e){var sv=e.target.closest&&e.target.
 var lt=0;document.addEventListener('pointermove',function(e){var n=Date.now();if(n-lt<70)return;lt=n;fx(e.clientX,e.clientY,'✨','pk sp');});
 var gs=document.getElementById('gstart'),G=document.getElementById('game'),T=document.getElementById('tap'),R=document.getElementById('gres'),P1=document.getElementById('p1'),P2=document.getElementById('p2'),p=0,a=0,on=false,iv2;
 function chk(){if(!on)return;if(p>=100||a>=100){on=false;clearInterval(iv2);T.disabled=true;R.textContent=p>=100?'გვანცა იმარჯვებს! 🏆 ამჯერად მტკიცებულებაც ჩანს, დასქრინე შედეგი და მოითხოვე დესერტი':'ანდრო იმარჯვებს... მაგრამ ტექნიკა ისევ ფუჭდება 😄 არც ამჯერად ითვლება!';}}
-gs.onclick=function(){G.hidden=false;p=0;a=0;on=false;clearInterval(iv2);P1.style.width=P2.style.width='0';R.textContent='მზად ხარ? დააჭირე და გაუშვი!';T.disabled=false;gs.textContent='🔁 თავიდან';};
+gs.onclick=function(){G.hidden=false;p=0;a=0;on=false;clearInterval(iv2);P1.style.width=P2.style.width='0';R.textContent='მზად ხარ? დააჭირე სწრაფად და ბევრჯერ!';T.disabled=false;gs.textContent='🔁 თავიდან';};
 function tap(){if(T.disabled)return;if(!on){on=true;iv2=setInterval(function(){a+=1.1+Math.random();P2.style.width=Math.min(a,100)+'%';chk();},100);}p+=3.2;P1.style.width=Math.min(p,100)+'%';tone(300+p*4,.08,'triangle',.04);chk();}
 T.addEventListener('pointerdown',function(e){e.preventDefault();tap();});
 T.addEventListener('click',function(e){if(e.detail===0)tap();});
