@@ -437,7 +437,7 @@ T.addEventListener('pointerdown',function(e){e.preventDefault();tap();});
 T.addEventListener('click',function(e){if(e.detail===0)tap();});
 var yb=document.getElementById('yes'),nb=document.getElementById('no'),sc=1,tk;
 nb.addEventListener('click',function(){sc=Math.min(sc+.12,1.6);yb.style.transform='scale('+sc+')';nb.animate([{transform:'translateX(0)'},{transform:'translateX(-8px)'},{transform:'translateX(8px)'},{transform:'translateX(0)'}],{duration:300});});
-yb.addEventListener('click',function(){if(tk)return;tk=document.createElement('div');tk.className='ticket';tk.innerHTML='<div class="tl"><small>პრემიერა</small><b>ორი Tesla 2: ნამდვილი პაემანი</b><span>სტუმარი: გვანცა</span><span>ადგილი: ერთი ახალი ადგილი 📍</span><span>დრო: შენ აირჩიე ⏰</span></div><div class="tr2">🎟️<small>ADMIT ONE</small></div>';document.getElementById('msg').after(tk);[523,659,784,1047].forEach(function(f,i){setTimeout(function(){tone(f,.6,'sine',.07);},i*140);});});
+yb.addEventListener('click',function(){if(tk)return;tk=document.createElement('div');tk.className='ticket';tk.innerHTML='<div class="tl"><small>პრემიერა</small></div><div class="tr2">🎟️<small>ADMIT ONE</small></div>';document.getElementById('msg').after(tk);[523,659,784,1047].forEach(function(f,i){setTimeout(function(){tone(f,.6,'sine',.07);},i*140);});});
 })();
 </script>
 </body>
