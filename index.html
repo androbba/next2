@@ -34,7 +34,7 @@ h1{font:800 clamp(27px,7vw,38px)/1.25 var(--display);text-wrap:balance;margin-bo
 .lock.no span{opacity:1}
 .lock.no{animation:shake .45s}
 @keyframes shake{20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
-.lock:focus-visible,.peel:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.lock:focus-visible,.peel:focus-visible,.again:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .hint{font-size:15px;margin-bottom:12px;color:var(--soft)}
 .reveal{position:relative;border-radius:6px;min-height:92px}
 .reveal + .reveal{margin-top:16px}
@@ -50,6 +50,9 @@ h1{font:800 clamp(27px,7vw,38px)/1.25 var(--display);text-wrap:balance;margin-bo
 .reveal.open .peel{transform:translate(18%,130%) rotate(9deg);opacity:0;pointer-events:none}
 .reveal.open .text{animation:glow 1.4s ease-out}
 @keyframes glow{from{box-shadow:0 0 0 0 var(--accent)}to{box-shadow:0 0 0 18px transparent}}
+.again-wrap{margin-top:34px;padding-top:26px;border-top:2px dashed var(--line);text-align:center}
+.again{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:52px;padding:12px 26px;border:2px solid var(--accent);border-radius:99px;background:transparent;color:var(--accent);font:600 16px var(--body);text-decoration:none;text-wrap:balance;transition:background .2s,color .2s,transform .15s}
+.again:hover{background:var(--accent);color:var(--paper);transform:translateY(-2px)}
 .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
 .hearts i{position:absolute;bottom:-30px;font-style:normal;font-size:24px;animation:rise 3.2s ease-in forwards}
 @keyframes rise{to{transform:translateY(-110vh) rotate(20deg);opacity:0}}
@@ -104,6 +107,11 @@ h1{font:800 clamp(27px,7vw,38px)/1.25 var(--display);text-wrap:balance;margin-bo
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b>სპოილერი 2</b>
     </button>
   </div>
+
+  <div class="again-wrap">
+    <!-- ORIGINAL_URL: ჩაწერე აქ შენი ლინკი href-ში -->
+    <a class="again" id="again" href="http://androbba.github.io/next3">ორიგინალი სცენარის თავიდან ნახვა 🎬</a>
+  </div>
 </div>
 </main>
 <div class="hearts" id="hearts" aria-hidden="true"></div>
@@ -141,6 +149,14 @@ h1{font:800 clamp(27px,7vw,38px)/1.25 var(--display);text-wrap:balance;margin-bo
     },1000);
   });
   setup('rv2','spoiler-2-revealed');
+
+  var again=document.getElementById('again');
+  again.addEventListener('click',function(e){
+    e.preventDefault();
+    gc('original-script-clicked');
+    var url=again.href;
+    setTimeout(function(){window.location.href=url;},250);
+  });
 })();
 </script>
 </body>
